@@ -81,12 +81,27 @@ export const TrustSafety = () => {
           ))}
         </div>
 
-        {/* SOS Demo */}
+        {/* SOS Demo with Story */}
         <div className="max-w-4xl mx-auto mb-16">
           <Card className="p-8 bg-gradient-to-r from-coral/5 to-success/5 border-2 border-coral/20">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <h3 className="text-2xl font-bold mb-4 text-primary">SOS Button Demo</h3>
+                
+                {/* Real Story */}
+                <div className="bg-background/50 rounded-lg p-4 mb-4">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="w-8 h-8 rounded-full bg-coral text-white flex items-center justify-center text-sm font-semibold">
+                      LM
+                    </div>
+                    <span className="font-semibold text-primary">Lisa M., 24</span>
+                  </div>
+                  <p className="text-sm italic text-muted-foreground">
+                    "When my roommate's friend made me uncomfortable during a party, I used the SOS feature. 
+                    Support called me within 30 seconds and helped me handle the situation safely."
+                  </p>
+                </div>
+                
                 <p className="text-muted-foreground mb-6">
                   In any uncomfortable situation, help is just one tap away. 
                   Our emergency system connects you instantly with support.

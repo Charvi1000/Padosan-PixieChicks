@@ -50,16 +50,32 @@ export const Hero = () => {
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-5xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-voice-primary to-accent bg-clip-text text-transparent leading-tight">
+          <h1 className="text-5xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-voice-primary to-accent bg-clip-text text-transparent leading-tight animate-fade-in">
             Find your vibe,
             <br />
             not just a roommate.
           </h1>
 
-          {/* Subtext */}
-          <p className="text-xl lg:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
-            Padosan matches you with roommates who <span className="text-voice-primary font-semibold">get you</span>—through voice, vibe, and lifestyle.
-          </p>
+          {/* Subtext with Character Story */}
+          <div className="max-w-3xl mx-auto mb-12">
+            <p className="text-xl lg:text-2xl text-muted-foreground mb-4 leading-relaxed animate-fade-in" style={{ animationDelay: '0.3s' }}>
+              Padosan matches you with roommates who <span className="text-voice-primary font-semibold">get you</span>—through voice, vibe, and lifestyle.
+            </p>
+            <div className="bg-gradient-card rounded-2xl p-6 border border-voice-primary/20 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 rounded-full bg-gradient-voice text-white flex items-center justify-center font-semibold text-sm">
+                  SA
+                </div>
+                <div>
+                  <p className="font-semibold text-primary">Sarah, 23</p>
+                  <p className="text-sm text-muted-foreground">Found her perfect roommate in 3 days</p>
+                </div>
+              </div>
+              <p className="text-sm italic text-muted-foreground">
+                "I was tired of awkward small talk and incompatible lifestyles. Padosan heard my voice and found someone who matches my energy perfectly!"
+              </p>
+            </div>
+          </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
