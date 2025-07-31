@@ -105,32 +105,6 @@ export const LifeAfterMoveIn = () => {
           ))}
         </div>
 
-        {/* Success Story */}
-        <div className="max-w-4xl mx-auto mb-16">
-          <div className="bg-gradient-card rounded-2xl p-8 border border-success/20">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-primary mb-4">6 Months Later...</h3>
-              <div className="flex justify-center gap-6">
-                <div className="text-center">
-                  <div className="w-16 h-16 rounded-full bg-success mx-auto mb-2 flex items-center justify-center text-white font-bold">
-                    AL
-                  </div>
-                  <p className="text-sm font-semibold">Alex</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 rounded-full bg-success mx-auto mb-2 flex items-center justify-center text-white font-bold">
-                    MO
-                  </div>
-                  <p className="text-sm font-semibold">Morgan</p>
-                </div>
-              </div>
-              <p className="text-lg italic text-muted-foreground mt-4">
-                "We've never had a single argument about chores or bills. The app handles everything seamlessly!"
-              </p>
-            </div>
-          </div>
-        </div>
-
         {/* Interactive Demos */}
         <div className="grid lg:grid-cols-2 gap-8 mb-16">
           {/* Chore Scheduling Demo */}
@@ -140,8 +114,8 @@ export const LifeAfterMoveIn = () => {
                 <CheckSquare className="h-6 w-6 text-accent" />
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-primary">Alex & Morgan's Chore Schedule</h3>
-                <p className="text-sm text-muted-foreground">Automated fair rotation system</p>
+                <h3 className="text-xl font-semibold text-primary">Chore Scheduler</h3>
+                <p className="text-sm text-muted-foreground">Fair and automated task distribution</p>
               </div>
             </div>
             

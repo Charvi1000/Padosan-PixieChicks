@@ -97,23 +97,7 @@ export const CompatibilitySection = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold mb-4 text-primary">See Your Matches</h3>
-            <p className="text-muted-foreground mb-6">Interactive demo showing how compatibility scoring works</p>
-            
-            {/* Character Story Integration */}
-            <div className="max-w-2xl mx-auto bg-gradient-card rounded-xl p-6 border border-voice-primary/20 mb-8">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-12 h-12 rounded-full bg-gradient-voice text-white flex items-center justify-center font-semibold">
-                  👤
-                </div>
-                <div className="text-left">
-                  <p className="font-semibold text-primary">You're Sarah</p>
-                  <p className="text-sm text-muted-foreground">22, Graduate Student, Early Riser</p>
-                </div>
-              </div>
-              <p className="text-sm italic text-muted-foreground">
-                "I need someone who respects my study schedule and keeps things clean, but isn't uptight about having friends over occasionally."
-              </p>
-            </div>
+            <p className="text-muted-foreground">Interactive demo showing how compatibility scoring works</p>
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8">
