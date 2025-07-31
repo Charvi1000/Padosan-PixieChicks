@@ -2,41 +2,80 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Padosan Design System - Elegant, youthful, and trustworthy
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
+    /* Base colors - soft and elegant */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 231 14% 9%;
 
+    /* Card and surfaces */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 231 14% 9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 231 14% 9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Deep navy for trust and professionalism */
+    --primary: 231 20% 15%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Soft lavender for personality */
+    --secondary: 268 40% 94%;
+    --secondary-foreground: 268 25% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted - Light grays for subtle elements */
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 8% 46%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - Vibrant teal for interactions */
+    --accent: 170 60% 65%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Coral accent for warmth and playfulness */
+    --coral: 12 76% 70%;
+    --coral-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Lavender for personality and voice elements */
+    --lavender: 268 60% 75%;
+    --lavender-foreground: 268 30% 20%;
 
-    --radius: 0.5rem;
+    /* Voice UI colors - for waveforms and audio elements */
+    --voice-primary: 268 70% 65%;
+    --voice-secondary: 170 50% 60%;
+    --voice-glow: 268 70% 85%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(268, 60%, 85%) 0%, hsl(170, 40%, 90%) 100%);
+    --gradient-voice: linear-gradient(90deg, hsl(268, 70%, 65%) 0%, hsl(170, 60%, 65%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0, 0%, 100%) 0%, hsl(268, 40%, 98%) 100%);
+
+    /* Status colors */
+    --destructive: 0 70% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 98%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 98%;
+
+    /* Borders and inputs */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 268 60% 75%;
+
+    /* Shadows for depth */
+    --shadow-elegant: 0 4px 20px hsl(231 20% 15% / 0.08);
+    --shadow-voice: 0 8px 32px hsl(268 70% 65% / 0.15);
+    --shadow-card: 0 2px 12px hsl(220 14% 20% / 0.06);
+
+    /* Spacing and layout */
+    --radius: 1rem;
+    --section-padding: 5rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +139,91 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter antialiased;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-inter;
+  }
+}
+
+@layer components {
+  /* Voice wave animation for UI elements */
+  .voice-wave {
+    background: var(--gradient-voice);
+    border-radius: 50px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .voice-wave::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, hsl(268, 70%, 85%), transparent);
+    animation: wave-flow 2s infinite;
+  }
+
+  @keyframes wave-flow {
+    0% { left: -100%; }
+    100% { left: 100%; }
+  }
+
+  /* Floating animations */
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  /* Pulse glow effect */
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes pulse-glow {
+    from { box-shadow: 0 0 20px hsl(268, 70%, 65%), 0 0 40px hsl(268, 70%, 65%); }
+    to { box-shadow: 0 0 30px hsl(268, 70%, 65%), 0 0 60px hsl(268, 70%, 65%); }
+  }
+
+  /* Scroll reveal animations */
+  .reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Section spacing */
+  .section {
+    padding: var(--section-padding) 0;
+  }
+
+  /* Button variants for different story sections */
+  .btn-hero {
+    background: var(--gradient-voice);
+    border: none;
+    color: white;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    border-radius: var(--radius);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-voice);
+  }
+
+  .btn-hero:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px hsl(268, 70%, 65% / 0.25);
   }
 }
