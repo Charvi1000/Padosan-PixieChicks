@@ -1,0 +1,39 @@
+[33mcommit c527a35de4def5a11e72b9bb363a3495a3f67ec6[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Charvi Gupta <charvigupta2605@gmail.com>
+Date:   Fri Aug 1 23:30:51 2025 +0530
+
+    recent updates
+
+[33mcommit c46e5c01b839652a65336f41acf9fbb027978384[m
+Author: Charvi Gupta <charvigupta2605@gmail.com>
+Date:   Fri Aug 1 17:26:14 2025 +0530
+
+    update
+
+[33mcommit 17e3996a2fdeb6b89807e0c7d881ad33b3ea4763[m
+Author: gpt-engineer-app[bot] <159125892+gpt-engineer-app[bot]@users.noreply.github.com>
+Date:   Thu Jul 31 10:46:11 2025 +0000
+
+    Reverted to commit cca01134bb6413cd00e5f0887f2f7d2ef720f3e4
+
+[33mcommit 9af7471563303f7e8f189bb225f993713231e071[m
+Author: gpt-engineer-app[bot] <159125892+gpt-engineer-app[bot]@users.noreply.github.com>
+Date:   Thu Jul 31 10:43:25 2025 +0000
+
+    Add interactive story elements
+    
+    Incorporate more storytelling elements throughout the website and enhance interactivity to create a more engaging user experience.
+
+[33mcommit cca01134bb6413cd00e5f0887f2f7d2ef720f3e4[m
+Author: gpt-engineer-app[bot] <159125892+gpt-engineer-app[bot]@users.noreply.github.com>
+Date:   Thu Jul 31 10:29:44 2025 +0000
+
+    Build Padosan landing page
+    
+    Create a one-page interactive website for Padosan, a voice-driven roommate matching platform. The website will follow a storytelling format with smooth scroll-based transitions and engaging visuals, emphasizing an elegant, minimal, and youthful yet premium design. It will highlight the platform's features from problem-solving to trust and safety, incorporating voice UI motifs and ensuring mobile-friendliness and accessibility.
+
+[33mcommit 3581683b169ebccbd8c84e4359d8bc4dee3d0993[m
+Author: gpt-engineer-app[bot] <159125892+gpt-engineer-app[bot]@users.noreply.github.com>
+Date:   Thu Jul 31 10:22:57 2025 +0000
+
+    Use tech stack vite_react_shadcn_ts

@@ -10,6 +10,7 @@ import {
 import { Navigation } from '@/components/Navigation';
 import { useAuth } from '@/contexts/AuthContext';
 import { useToast } from '@/hooks/use-toast';
+import { AnimatedConversation } from '@/components/AnimatedConversation';
 
 const questions = [
   {
@@ -138,6 +139,9 @@ export const EnterPadosan = () => {
   const [selectedOptions, setSelectedOptions] = useState<{ [key: number]: string }>({});
   const [isProcessing, setIsProcessing] = useState(false);
   const [profileCreated, setProfileCreated] = useState(false);
+  const [showInitialConversation, setShowInitialConversation] = useState(true);
+  const [showEndConversation, setShowEndConversation] = useState(false);
+  const [showQuestions, setShowQuestions] = useState(false);
 
   const currentQ = questions[currentQuestion];
   const progress = ((currentQuestion + 1) / questions.length) * 100;
@@ -205,12 +209,27 @@ export const EnterPadosan = () => {
     setTimeout(() => {
       setIsProcessing(false);
       setProfileCreated(true);
+      setShowEndConversation(true);
       toast({
         title: "Profile created successfully! 🎉",
         description: "Here are your perfect matches!",
         duration: 3000,
       });
     }, 2000);
+  };
+
+  const handleInitialConversationComplete = () => {
+    setShowInitialConversation(false);
+    setShowQuestions(true);
+  };
+
+  const handleEndConversationComplete = () => {
+    setShowEndConversation(false);
+    toast({
+      title: "Let's start chatting! 💬",
+      description: "Time to connect with your matches!",
+      duration: 3000,
+    });
   };
 
   if (!isAuthenticated) {
@@ -237,10 +256,29 @@ export const EnterPadosan = () => {
       <Navigation />
       <div className="pt-20 lg:pt-6">
         <div className="container mx-auto px-6 py-8">
-          {/* Story Avatar */}
-          <div className="flex justify-center">
-            <StoryAvatar mood={getAvatarMood()} message={getAvatarMessage()} />
-          </div>
+          {/* Initial Animated Conversation */}
+          {showInitialConversation && (
+            <AnimatedConversation 
+              onComplete={handleInitialConversationComplete}
+              isEndScene={false}
+            />
+          )}
+
+          {/* End Animated Conversation */}
+          {showEndConversation && (
+            <AnimatedConversation 
+              onComplete={handleEndConversationComplete}
+              isEndScene={true}
+            />
+          )}
+
+          {/* Questions Flow */}
+          {showQuestions && (
+            <>
+              {/* Story Avatar */}
+              <div className="flex justify-center">
+                <StoryAvatar mood={getAvatarMood()} message={getAvatarMessage()} />
+              </div>
 
           {/* Progress Bar */}
           {!profileCreated && !isProcessing && (
@@ -545,6 +583,8 @@ export const EnterPadosan = () => {
                 </Button>
               </div>
             </div>
+          )}
+            </>
           )}
         </div>
       </div>
