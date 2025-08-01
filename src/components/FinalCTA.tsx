@@ -3,8 +3,12 @@ import { Card } from '@/components/ui/card';
 import { VoiceWave } from './VoiceWave';
 import { ArrowRight, Mic, Users, Heart } from 'lucide-react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '@/contexts/AuthContext';
 
 export const FinalCTA = () => {
+  const navigate = useNavigate();
+  const { isAuthenticated } = useAuth();
   const [isVoiceActive, setIsVoiceActive] = useState(false);
 
   const toggleVoice = () => {
@@ -66,8 +70,9 @@ export const FinalCTA = () => {
             <Button 
               size="lg" 
               className="bg-white text-primary hover:bg-white/90 text-lg px-8 py-4 w-full sm:w-auto font-semibold shadow-lg"
+              onClick={() => isAuthenticated ? navigate('/') : navigate('/login')}
             >
-              Start Voice Onboarding
+              {isAuthenticated ? 'Continue Voice Onboarding' : 'Start Voice Onboarding'}
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             
