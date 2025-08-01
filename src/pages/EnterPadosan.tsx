@@ -11,6 +11,7 @@ import { Navigation } from '@/components/Navigation';
 import { useAuth } from '@/contexts/AuthContext';
 import { useToast } from '@/hooks/use-toast';
 import { AnimatedConversation } from '@/components/AnimatedConversation';
+import { MatchIntroduction } from '@/components/MatchIntroduction';
 
 const questions = [
   {
@@ -142,6 +143,8 @@ export const EnterPadosan = () => {
   const [showInitialConversation, setShowInitialConversation] = useState(true);
   const [showEndConversation, setShowEndConversation] = useState(false);
   const [showQuestions, setShowQuestions] = useState(false);
+  const [selectedMatch, setSelectedMatch] = useState<typeof compatibleMatches[0] | null>(null);
+  const [showMatchIntroduction, setShowMatchIntroduction] = useState(false);
 
   const currentQ = questions[currentQuestion];
   const progress = ((currentQuestion + 1) / questions.length) * 100;
@@ -230,6 +233,38 @@ export const EnterPadosan = () => {
       description: "Time to connect with your matches!",
       duration: 3000,
     });
+  };
+
+  const handleMatchSelect = (match: typeof compatibleMatches[0]) => {
+    setSelectedMatch(match);
+    setShowMatchIntroduction(true);
+  };
+
+  const handleMatchIntroductionClose = () => {
+    setShowMatchIntroduction(false);
+    setSelectedMatch(null);
+  };
+
+  const handleMatchMessage = () => {
+    if (selectedMatch) {
+      toast({
+        title: `Message ${selectedMatch.name}`,
+        description: "Opening chat window...",
+        duration: 3000,
+      });
+      handleMatchIntroductionClose();
+    }
+  };
+
+  const handleMatchLike = () => {
+    if (selectedMatch) {
+      toast({
+        title: "Added to favorites! ❤️",
+        description: `${selectedMatch.name} added to your liked list`,
+        duration: 2000,
+      });
+      handleMatchIntroductionClose();
+    }
   };
 
   if (!isAuthenticated) {
@@ -540,16 +575,10 @@ export const EnterPadosan = () => {
                           size="sm"
                           variant="outline"
                           className="flex-1"
-                          onClick={() => {
-                            toast({
-                              title: `Message ${match.name}`,
-                              description: "Opening chat window...",
-                              duration: 3000,
-                            });
-                          }}
+                          onClick={() => handleMatchSelect(match)}
                         >
                           <MessageCircle className="h-4 w-4 mr-2" />
-                          Message
+                          Meet {match.name.split(' ')[0]}
                         </Button>
                         <Button
                           size="sm"
@@ -585,6 +614,16 @@ export const EnterPadosan = () => {
             </div>
           )}
             </>
+          )}
+
+          {/* Match Introduction Modal */}
+          {showMatchIntroduction && selectedMatch && (
+            <MatchIntroduction
+              match={selectedMatch}
+              onClose={handleMatchIntroductionClose}
+              onMessage={handleMatchMessage}
+              onLike={handleMatchLike}
+            />
           )}
         </div>
       </div>
