@@ -10,7 +10,7 @@ import { EnterPadosan } from "./pages/EnterPadosan";
 import { Chat } from "./pages/Chat";
 import { BudgetSplitwise } from "./pages/BudgetSplitwise";
 import { PGSuggestions } from "./pages/PGSuggestions";
-import { BudgetOptions } from "./pages/BudgetOptions";
+import { PersonalBudget } from "./pages/PersonalBudget";
 import { SOS } from "./pages/SOS";
 import { MutualFriends } from "./pages/MutualFriends";
 import { FamilyMode } from "./pages/FamilyMode";
@@ -32,7 +32,7 @@ const App = () => (
           <Route path="/chat" element={<Chat />} />
           <Route path="/budget-splitwise" element={<BudgetSplitwise />} />
           <Route path="/pg-suggestions" element={<PGSuggestions />} />
-          <Route path="/budget-options" element={<BudgetOptions />} />
+          <Route path="/budget-options" element={<PersonalBudget />} />
           <Route path="/sos" element={<SOS />} />
           <Route path="/mutual-friends" element={<MutualFriends />} />
           <Route path="/family-mode" element={<FamilyMode />} />

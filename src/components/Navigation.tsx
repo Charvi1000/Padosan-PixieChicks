@@ -27,8 +27,8 @@ const navItems = [
   },
   {
     id: 'budget-splitwise',
-    label: 'Budget Splitwise',
-    description: 'Manage expenses and split bills',
+    label: 'Divide Up',
+    description: 'Split expenses and chores with roommates',
     path: '/budget-splitwise',
     icon: Calculator,
     color: 'from-orange-500 to-red-500'

@@ -1,10 +1,13 @@
+import { Navigation } from '@/components/Navigation';
 import { Hero } from '@/components/Hero';
 import { ProblemSection } from '@/components/ProblemSection';
+import { PadosanIntro } from '@/components/PadosanIntro';
+import { CompatibilitySection } from '@/components/CompatibilitySection';
 import { TrustSafety } from '@/components/TrustSafety';
+import { LifeAfterMoveIn } from '@/components/LifeAfterMoveIn';
 import { ContinuousLearning } from '@/components/ContinuousLearning';
 import { FinalCTA } from '@/components/FinalCTA';
 import { Footer } from '@/components/Footer';
-import { Navigation } from '@/components/Navigation';
 
 const Index = () => {
   return (
@@ -12,7 +15,10 @@ const Index = () => {
       <Navigation />
       <Hero />
       <ProblemSection />
+      <PadosanIntro />
+      <CompatibilitySection />
       <TrustSafety />
+      <LifeAfterMoveIn />
       <ContinuousLearning />
       <FinalCTA />
       <Footer />

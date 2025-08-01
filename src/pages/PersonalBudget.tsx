@@ -62,7 +62,7 @@ interface CostBreakdown {
   color: string;
 }
 
-export const BudgetOptions = () => {
+export const PersonalBudget = () => {
   const { isAuthenticated } = useAuth();
   const { toast } = useToast();
   
